@@ -18,9 +18,13 @@
     white-space: nowrap;
 }
 
+.marquee-wrapper:hover .marquee {
+    animation-play-state: paused;
+}
+
 .marquee {
     display: inline-flex;
-    animation: scroll 30s linear infinite;
+    animation: scroll 25s linear infinite;
     align-items: center;
 }
 
