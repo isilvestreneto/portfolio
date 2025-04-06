@@ -1,0 +1,10 @@
+<div class="project-card">
+    <h4>{{ title }}</h4>
+    <p>{{ description }}</p>
+    <a *ngIf="routerLink" [routerLink]="routerLink" class="project-link">
+        Ver mais detalhes →
+    </a>
+    <ul class="tech-stack">
+        <li *ngFor="let tech of techStack">{{ tech }}</li>
+    </ul>
+</div>

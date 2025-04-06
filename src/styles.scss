@@ -1,0 +1,139 @@
+// Paleta futurista
+$color-bg: #000000;
+$color-text: #e0e0e0;
+$color-accent: #00ffff;
+$color-muted: #777;
+$color-border: #2a2a2a;
+
+// Tipografia
+$font-primary: "Exo 2", sans-serif;
+$font-size-base: 16px;
+$font-size-lg: 24px;
+$font-size-sm: 14px;
+
+// Espaçamento
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+
+body {
+    margin: 0;
+    background-color: $color-bg;
+    color: $color-text;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: "Orbitron", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $color-text;
+    margin-bottom: $spacing-sm;
+    text-align: center;
+}
+
+a {
+    color: $color-accent;
+    text-decoration: none;
+
+    &:hover {
+        text-shadow: 0 0 6px $color-accent;
+    }
+}
+
+// Botão terminal-style
+.button {
+    background: none;
+    color: $color-text;
+    border: 1px solid $color-text;
+    padding: $spacing-xs $spacing-sm;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: $color-accent;
+        color: $color-accent;
+        box-shadow: 0 0 5px $color-accent;
+    }
+}
+
+// Seções
+.section {
+    padding: $spacing-lg $spacing-md;
+    border-bottom: 1px solid $color-border;
+
+    &__title {
+        font-size: $font-size-lg;
+        letter-spacing: 0.1em;
+        margin-bottom: $spacing-sm;
+    }
+
+    &__text {
+        max-width: 600px;
+        color: $color-muted;
+    }
+}
+
+// Cards de projeto
+.card {
+    background: transparent;
+    border: 1px solid $color-accent;
+    padding: $spacing-sm;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 10px $color-accent;
+    }
+
+    &__title {
+        font-weight: bold;
+        margin-top: $spacing-sm;
+    }
+
+    &__desc {
+        font-size: $font-size-sm;
+        color: $color-muted;
+    }
+
+    &__tech {
+        display: flex;
+        gap: $spacing-xs;
+        margin-top: $spacing-xs;
+
+        span {
+            background-color: $color-border;
+            color: $color-text;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-size: $font-size-sm;
+        }
+    }
+}
+
+// Footer / Contato
+.footer {
+    text-align: center;
+    padding: $spacing-md;
+
+    a {
+        margin: 0 $spacing-xs;
+        font-size: 20px;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<app-header></app-header>
+<hr>
+<section>
+    <app-sobre-mim></app-sobre-mim>
+</section>
+<hr>
+<section class="projects-section" id="projetos">
+    <h3>Projetos</h3>
+    <div class="project-grid">
+        <app-project-card title="Abertura de Conta Digital D+0"
+            description="Implementação front-end para reduzir o prazo de abertura de conta de D+4 para D0 em uma instituição financeira, utilizando Angular 8, TypeScript e Jest."
+            [techStack]="['Angular 8', 'TypeScript', 'Jest', 'Design System interno']"
+            [routerLink]="'/projetos/abertura-conta-d0'"></app-project-card>
+        <app-project-card title="Modernização da Jornada de Onboarding"
+            description="Migração de stack legacy para Azure, upgrade de Angular 15 e reestruturação para micro front-ends. Participação full-stack com destaque em integração de APIs, testes e liderança técnica."
+            [techStack]="[
+    'Angular 15',
+    'TypeScript',
+    'Jest',
+    'Java',
+    'Spring Boot',
+    'Node.js',
+    'Express',
+    'Maven',
+    'OpenAPI',
+    'Azure'
+  ]" [routerLink]="'/projetos/onboarding-modernizacao'"></app-project-card>
+
+    </div>
+</section>
+<hr style="margin-top: 3rem;">
+<section>
+    <app-skills-marquee></app-skills-marquee>
+</section>
+<hr>
+<app-testimonials></app-testimonials>
+<app-footer></app-footer>

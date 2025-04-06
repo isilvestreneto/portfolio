@@ -1,0 +1,45 @@
+.testimonials {
+    padding: 2rem 0rem;
+    background-color: #000;
+    color: #e0e0e0;
+    text-align: left;
+}
+
+.testimonials h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+blockquote {
+    border: 1px solid #2a2a2a;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #0a0a0a;
+    font-style: italic;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+blockquote:hover {
+    transform: translateY(-4px);
+}
+
+blockquote p {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+blockquote footer {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #aaa;
+}

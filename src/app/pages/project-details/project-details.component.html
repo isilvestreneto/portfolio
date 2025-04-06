@@ -1,0 +1,25 @@
+<section class="project-details">
+    <h2>{{ title }}</h2>
+
+    <div class="section-block">
+        <h3>📌 Contexto</h3>
+        <p>{{ context }}</p>
+    </div>
+
+    <div class="section-block">
+        <h3>🔧 Atuação</h3>
+        <p>{{ contribution }}</p>
+    </div>
+
+    <div class="section-block">
+        <h3>🚀 Resultados</h3>
+        <p>{{ results }}</p>
+    </div>
+
+    <div class="section-block">
+        <h3>🛠️ Tecnologias</h3>
+        <ul class="tech-stack">
+            <li *ngFor="let tech of techStack">{{ tech }}</li>
+        </ul>
+    </div>
+</section>
