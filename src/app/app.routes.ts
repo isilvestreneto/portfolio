@@ -6,9 +6,11 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    data: { animation: 'HomePage' }
   },
   {
     path: 'projetos/:slug',
     component: ProjectPageWrapperComponent,
+    data: { animation: 'ProjectPage' }
   }
 ];

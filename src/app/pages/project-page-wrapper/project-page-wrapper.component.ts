@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectDetailsComponent } from "../project-details/project-details.component";
 import { NavbarComponent } from "../../components/navbar/navbar.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-project-page-wrapper',
-  imports: [CommonModule, ProjectDetailsComponent, NavbarComponent],
+  imports: [CommonModule, ProjectDetailsComponent, NavbarComponent, FooterComponent],
   templateUrl: './project-page-wrapper.component.html',
   styleUrl: './project-page-wrapper.component.scss'
 })
@@ -16,6 +17,8 @@ export class ProjectPageWrapperComponent {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     const slug = this.route.snapshot.paramMap.get('slug');
 
     // Simulação de dados (você pode buscar de um service futuramente)
