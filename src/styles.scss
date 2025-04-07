@@ -14,6 +14,8 @@
     --font-secondary: 'Exo', sans-serif;
     --icon-filter-dark: brightness(0) invert(1);
     --icon-filter: var(--icon-filter-light);
+    --color-accent: #88aabb;
+
 }
 
 [data-theme="dark"] {
@@ -88,7 +90,12 @@ h2 {
 }
 
 h3 {
+    font-family: var(--font-secondary);
     font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
 }
 
 h4 {
@@ -131,6 +138,7 @@ a {
 
 a:hover {
     text-decoration: underline;
+    color: var(--color-accent);
 }
 
 
@@ -235,6 +243,8 @@ button {
 
         &:hover {
             transform: scale(1.1);
+            color: --color-accent;
+
         }
     }
 }

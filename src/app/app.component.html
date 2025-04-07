@@ -1,7 +1,5 @@
 <button class="theme-toggle" (click)="themeService.toggleTheme()" [attr.aria-label]="'Trocar tema'">
-    <span class="icon" [class.dark]="themeService.getTheme() === 'dark'">🌞</span>
-    <span class="icon" [class.dark]="themeService.getTheme() === 'dark'">🌜</span>
-    <span class="slider"></span>
+    <lucide-icon [name]="isDark ? 'lightbulb' : 'lightbulb-off'" class="theme-icon" />
 </button>
 <main [@routeAnimations]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>

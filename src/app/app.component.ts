@@ -9,10 +9,11 @@ import {
 } from '@angular/animations';
 import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './services/theme.service';
+import { LucideIconsModule } from './shared/icons/lucide-icons.module';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, LucideIconsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [
@@ -60,6 +61,10 @@ export class AppComponent {
 
   constructor(public themeService: ThemeService) {
     this.themeService.initTheme();
+  }
+
+  get isDark(): boolean {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
   }
 
   prepareRoute(outlet: RouterOutlet) {
