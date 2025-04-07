@@ -3,12 +3,13 @@
     <div class="marquee-wrapper">
         <div class="marquee">
             <div *ngFor="let skill of skills" class="skill-tag" [ngStyle]="{ '--skill-color': skill.color }">
-                <img [src]="skill.icon" [alt]="skill.label" />
+                <img [ngSrc]="skill.icon" [alt]="skill.label" width="24" height="24" loading="lazy" />
                 <span>{{ skill.label }}</span>
             </div>
+
             <!-- repetir para efeito contínuo -->
             <div *ngFor="let skill of skills" class="skill-tag" [ngStyle]="{ '--skill-color': skill.color }">
-                <img [src]="skill.icon" [alt]="skill.label" />
+                <img [ngSrc]="skill.icon" [alt]="skill.label" width="24" height="24" loading="lazy" />
                 <span>{{ skill.label }}</span>
             </div>
         </div>

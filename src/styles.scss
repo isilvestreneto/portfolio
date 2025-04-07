@@ -1,3 +1,12 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+
+@import "@fontsource/exo-2/400.css";
+@import "@fontsource/exo-2/600.css";
+
+@import "@fontsource/orbitron/400.css";
+@import "@fontsource/orbitron/700.css";
+
 * {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -10,8 +19,8 @@
     --color-heading: #111111;
     --color-link: #1a1a1a; // tema claro → preto suave
     --color-link-hover: #000000;
-    --font-primary: Orbitron, sans-serif;
-    --font-secondary: 'Exo', sans-serif;
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Exo 2', sans-serif;
     --icon-filter-dark: brightness(0) invert(1);
     --icon-filter: var(--icon-filter-light);
     --color-accent: #88aabb;
