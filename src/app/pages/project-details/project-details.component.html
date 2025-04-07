@@ -2,24 +2,30 @@
     <h2>{{ title }}</h2>
 
     <div class="section-block">
-        <h3>📌 Contexto</h3>
+        <h3> <lucide-icon name="file-text" class="icon"></lucide-icon>
+            Contexto</h3>
         <p>{{ context }}</p>
     </div>
 
     <div class="section-block">
-        <h3>🔧 Atuação</h3>
+        <h3> <lucide-icon name="wrench" class="icon"></lucide-icon>
+            Atuação</h3>
         <p>{{ contribution }}</p>
     </div>
 
     <div class="section-block">
-        <h3>🚀 Resultados</h3>
+        <h3> <lucide-icon name="trending-up" class="icon"></lucide-icon>
+            Resultados</h3>
         <p>{{ results }}</p>
     </div>
 
     <div class="section-block">
-        <h3>🛠️ Tecnologias</h3>
-        <ul class="tech-stack">
-            <li *ngFor="let tech of techStack">{{ tech }}</li>
-        </ul>
+        <h3> <lucide-icon name="cpu" class="icon"></lucide-icon>
+            Tecnologias</h3>
+        <div class="tech-tags" @techFade>
+            <span *ngFor="let tech of techStack" class="tech-pill">
+                #{{ tech }}
+            </span>
+        </div>
     </div>
 </section>

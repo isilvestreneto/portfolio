@@ -8,6 +8,7 @@ import {
   group
 } from '@angular/animations';
 import { RouterOutlet } from '@angular/router';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -56,6 +57,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'portfolio';
+
+  constructor(public themeService: ThemeService) {
+    this.themeService.initTheme();
+  }
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet?.activatedRouteData?.['animation'];

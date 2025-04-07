@@ -1,8 +1,8 @@
 .skills-section {
     padding: 4rem 0;
     overflow: hidden;
-    background-color: #000;
-    color: #e0e0e0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
 }
 
 .skills-section h3 {
@@ -11,11 +11,13 @@
     text-transform: uppercase;
     margin-bottom: 2rem;
     letter-spacing: 0.05em;
+    color: var(--color-heading);
 }
 
 .marquee-wrapper {
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
 }
 
 .marquee-wrapper:hover .marquee {
@@ -24,36 +26,40 @@
 
 .marquee {
     display: inline-flex;
-    animation: scroll 25s linear infinite;
     align-items: center;
+    gap: 2rem;
+    animation: scroll 25s linear infinite;
+    will-change: transform;
 }
 
 .skill-tag {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    margin: 0 1.5rem;
+    margin: 0 1.25rem;
     padding: 0.5rem 1rem;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--color-border);
     border-radius: 999px;
     font-size: 0.85rem;
     white-space: nowrap;
-    transition: background-color 0.3s;
-    --skill-color: #e0e0e0;
-    /* fallback padrão */
+    color: var(--color-text);
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    --skill-color: #e0e0e0; // fallback
 }
 
 .skill-tag:hover {
     background-color: var(--skill-color);
-    color: #000;
+    color: var(--color-bg);
     border-color: var(--skill-color);
 }
 
 .skill-tag img {
-    height: 24px;
-    width: 24px;
+    height: 20px;
+    width: 20px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+    filter: var(--icon-filter);
 }
 
 @keyframes scroll {
@@ -63,5 +69,22 @@
 
     100% {
         transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 600px) {
+    .skill-tag {
+        margin: 0 0.75rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .skill-tag img {
+        height: 18px;
+        width: 18px;
+    }
+
+    .marquee {
+        gap: 1.5rem;
     }
 }

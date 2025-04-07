@@ -1,8 +1,10 @@
 .project-card {
-  border: 1px solid #e0e0e0;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  transition: transform 0.2s ease-in-out;
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease-in-out, border-color 0.3s ease;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 .project-card:hover {
@@ -23,35 +25,18 @@
   cursor: pointer;
 }
 
-.project-card li {
+.tech-stack li {
   font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid #e0e0e0;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--color-border);
   border-radius: 999px;
-  background-color: transparent;
-  color: #e0e0e0;
-  white-space: nowrap;
-  font-family: 'Inter', sans-serif;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  color: var(--color-chip-text);
+  background-color: var(--color-chip-bg);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.project-card li:hover {
-  background-color: #e0e0e0;
-  color: #000000;
-}
-
-.project-link {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: #e0e0e0;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.2s ease;
-}
-
-.project-link:hover {
-  color: #ffffff;
-  border-bottom: 1px solid #ffffff;
-  transform: translateX(2px);
+.tech-stack li:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
 }
