@@ -88,3 +88,8 @@
         gap: 1.5rem;
     }
 }
+
+.marquee-wrapper:hover .marquee,
+.marquee-wrapper.paused-manually .marquee {
+    animation-play-state: paused;
+}
