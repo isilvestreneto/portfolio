@@ -55,6 +55,19 @@
     user-select: none;
     letter-spacing: 0.03em;
     transition: background-color 0.2s ease;
+    animation: tech-pill-fade-in 400ms ease-out both;
+}
+
+@keyframes tech-pill-fade-in {
+    from {
+        opacity: 0;
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
 }
 
 [data-theme='dark'] .tech-pill {

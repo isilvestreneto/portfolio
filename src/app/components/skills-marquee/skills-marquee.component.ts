@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-skills-marquee',
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [CommonModule],
   templateUrl: './skills-marquee.component.html',
   styleUrl: './skills-marquee.component.scss'
 })
