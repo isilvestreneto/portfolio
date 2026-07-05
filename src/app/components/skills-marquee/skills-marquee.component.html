@@ -1,19 +1,23 @@
 <div class="skills-section">
-    <h3>Skills</h3>
-    <div class="marquee-wrapper">
-        <div class="marquee">
-            <div *ngFor="let skill of skills" class="skill-tag" [ngStyle]="{ '--skill-color': skill.color }"
-                (click)="pauseMarqueeTemporarily()">
-                <img [src]="skill.icon" [alt]="skill.label" />
-                <span>{{ skill.label }}</span>
-            </div>
-
-            <!-- repetir para efeito contínuo -->
-            <div *ngFor="let skill of skills" class="skill-tag" [ngStyle]="{ '--skill-color': skill.color }"
-                (click)="pauseMarqueeTemporarily()">
-                <img [src]="skill.icon" [alt]="skill.label" />
-                <span>{{ skill.label }}</span>
-            </div>
+  <h3>Skills</h3>
+  <div class="marquee-wrapper">
+    <div class="marquee">
+      @for (skill of skills; track skill) {
+        <div class="skill-tag" [ngStyle]="{ '--skill-color': skill.color }"
+          (click)="pauseMarqueeTemporarily()">
+          <img [src]="skill.icon" [alt]="skill.label" />
+          <span>{{ skill.label }}</span>
         </div>
+      }
+
+      <!-- repetir para efeito contínuo -->
+      @for (skill of skills; track skill) {
+        <div class="skill-tag" [ngStyle]="{ '--skill-color': skill.color }"
+          (click)="pauseMarqueeTemporarily()">
+          <img [src]="skill.icon" [alt]="skill.label" />
+          <span>{{ skill.label }}</span>
+        </div>
+      }
     </div>
+  </div>
 </div>

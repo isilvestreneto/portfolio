@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectDetailsComponent } from "../project-details/project-details.component";
@@ -7,7 +7,7 @@ import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-project-page-wrapper',
-  imports: [CommonModule, ProjectDetailsComponent, NavbarComponent, FooterComponent],
+  imports: [ProjectDetailsComponent, NavbarComponent, FooterComponent],
   templateUrl: './project-page-wrapper.component.html',
   styleUrl: './project-page-wrapper.component.scss'
 })
