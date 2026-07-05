@@ -1,59 +1,74 @@
-# PortfolioVercel
+# Portfólio — Ivanildo Silvestre
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Portfólio pessoal construído em Angular 20 (standalone components), com SSR/PWA scaffolding, tema claro/escuro persistente e transições de rota via View Transitions API nativa do navegador.
 
-## Development server
+## Stack
 
-To start a local development server, run:
+- **Angular 20** — standalone components, lazy loading de rotas, `provideRouter` com `withViewTransitions()`.
+- **@lucide/angular** — ícones como componentes standalone (`provideLucideIcons`).
+- **SCSS** — variáveis CSS (`--color-*`, `--font-*`) para o tema claro/escuro, alternado via atributo `data-theme` no `<html>`.
+- **Fontes self-hosted** — Inter, Exo 2 e Orbitron servidas como `.woff2` de `public/fonts`, sem dependência de CDN ou de pacotes `@fontsource`.
+- **PWA** — `@angular/service-worker` + `manifest.webmanifest`, habilitado no build de produção (`ngsw-config.json`).
 
-```bash
-ng serve
+## Estrutura
+
+```
+src/app/
+├── app.component.ts          # shell da aplicação (toggle de tema, router-outlet)
+├── app.config.ts             # providers da aplicação (router, hidratação, ícones)
+├── app.routes.ts             # rotas lazy-loaded
+├── components/                # componentes reutilizáveis (header, navbar, footer, project-card, skills-marquee, testimonials)
+├── pages/                     # páginas roteadas (home, sobre-mim, project-details, project-page-wrapper)
+└── services/
+    └── theme.service.ts       # persiste o tema (light/dark) no localStorage
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Rodando localmente
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Pré-requisitos: Node.js e npm.
 
 ```bash
-ng generate component component-name
+npm install
+npm start        # ng serve --o — abre http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+O servidor de desenvolvimento recarrega automaticamente a cada alteração nos arquivos-fonte.
+
+## Build
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+Gera os artefatos de produção em `dist/portfolio-vercel`, com otimizações, hashing de assets e o service worker habilitado.
 
-To build the project run:
+Para acompanhar mudanças durante o desenvolvimento sem o dev server:
 
 ```bash
-ng build
+npm run watch
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Testes
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
+Executa os testes unitários com Karma/Jasmine.
 
-For end-to-end (e2e) testing, run:
+## Deploy
 
-```bash
-ng e2e
-```
+O projeto está configurado para deploy na Vercel (nome do pacote `portfolio-vercel`).
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Notas de manutenção
 
-## Additional Resources
+Alguns pontos identificados na última revisão, para acompanhar:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Os pacotes `@lucide/angular`, `@fontsource/*` (removido em favor de fontes self-hosted) e `@angular/service-worker` já causaram erros de build por estarem referenciados no código sem constar em `package.json`/`node_modules`. Ao adicionar uma nova lib, confirme que ela foi salva em `package.json` (`npm install <pkg> --save`).
+- Há scaffolding de SSR (`@angular/ssr`, `app.config.server.ts`, `app.routes.server.ts`) mas falta o entry point `src/main.server.ts` e a opção `server` no `angular.json` — ou seja, o SSR está incompleto/não é usado no build atual. Vale decidir entre completar a configuração ou remover os arquivos órfãos.
+- `provideLucideIcons(...)` em `app.config.ts` precisa dos ícones passados como argumento (`Cpu, FileText, Lightbulb, LightbulbOff, TrendingUp, Wrench`); alguma ferramenta de lint/format do editor tem removido esses argumentos ao salvar, o que silenciosamente para de renderizar os ícones (sem erro de build). Vale checar a configuração de "organize imports" ou auto-fix do ESLint/editor.
+
+## Recursos
+
+- [Documentação do Angular](https://angular.dev)
+- [Angular CLI](https://angular.dev/tools/cli)
