@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
@@ -10,7 +10,7 @@ import { SkillsMarqueeComponent } from "../../components/skills-marquee/skills-m
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, HeaderComponent, SobreMimComponent, ProjectCardComponent, TestimonialsComponent, FooterComponent, SkillsMarqueeComponent],
+  imports: [HeaderComponent, SobreMimComponent, ProjectCardComponent, TestimonialsComponent, FooterComponent, SkillsMarqueeComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
