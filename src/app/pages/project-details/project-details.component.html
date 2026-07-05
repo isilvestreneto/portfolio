@@ -2,28 +2,28 @@
     <h2>{{ title }}</h2>
 
     <div class="section-block">
-        <h3> <lucide-icon name="file-text" class="icon"></lucide-icon>
+        <h3> <svg lucideIcon="file-text" class="icon"></svg>
             Contexto</h3>
         <p>{{ context }}</p>
     </div>
 
     <div class="section-block">
-        <h3> <lucide-icon name="wrench" class="icon"></lucide-icon>
+        <h3> <svg lucideIcon="wrench" class="icon"></svg>
             Atuação</h3>
         <p>{{ contribution }}</p>
     </div>
 
     <div class="section-block">
-        <h3> <lucide-icon name="trending-up" class="icon"></lucide-icon>
+        <h3> <svg lucideIcon="trending-up" class="icon"></svg>
             Resultados</h3>
         <p>{{ results }}</p>
     </div>
 
     <div class="section-block">
-        <h3> <lucide-icon name="cpu" class="icon"></lucide-icon>
+        <h3> <svg lucideIcon="cpu" class="icon"></svg>
             Tecnologias</h3>
-        <div class="tech-tags" @techFade>
-            <span *ngFor="let tech of techStack" class="tech-pill">
+        <div class="tech-tags">
+            <span *ngFor="let tech of techStack; let i = index" class="tech-pill" [style.animation-delay.ms]="i * 100">
                 #{{ tech }}
             </span>
         </div>

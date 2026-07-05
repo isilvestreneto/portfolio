@@ -1,11 +1,80 @@
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/600.css";
+// Transições de rota via View Transitions API nativa do navegador
+// (substitui o antigo trigger @routeAnimations do @angular/animations)
+::view-transition-old(root) {
+    animation: route-leave 300ms ease-in-out both;
+}
 
-@import "@fontsource/exo-2/400.css";
-@import "@fontsource/exo-2/600.css";
+::view-transition-new(root) {
+    animation: route-enter 500ms ease-out both;
+}
 
-@import "@fontsource/orbitron/400.css";
-@import "@fontsource/orbitron/700.css";
+@keyframes route-leave {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(4px);
+    }
+}
+
+@keyframes route-enter {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/inter-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/exo-2-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/exo-2-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/orbitron-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/orbitron-latin-700-normal.woff2') format('woff2');
+}
 
 * {
     transition: background-color 0.3s ease, color 0.3s ease;
