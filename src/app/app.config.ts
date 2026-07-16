@@ -2,7 +2,7 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withViewTransitions } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { LucideLightbulb, LucideLightbulbOff, provideLucideIcons } from '@lucide/angular';
+import { LucideCpu, LucideFileText, LucideLightbulb, LucideLightbulbOff, LucideTrendingUp, LucideWrench, provideLucideIcons } from '@lucide/angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,7 +11,11 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideLucideIcons(
       LucideLightbulb,
-      LucideLightbulbOff
+      LucideLightbulbOff,
+      LucideFileText,
+      LucideWrench,
+      LucideTrendingUp,
+      LucideCpu
     )
   ]
 };

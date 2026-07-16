@@ -21,7 +21,6 @@ export class ProjectPageWrapperComponent {
 
     const slug = this.route.snapshot.paramMap.get('slug');
 
-    // Simulação de dados (você pode buscar de um service futuramente)
     const projectsMap: Record<string, any> = {
       'abertura-conta-d0': {
         title: 'Abertura de Conta Digital D+0',
@@ -54,6 +53,13 @@ export class ProjectPageWrapperComponent {
           'Azure',
         ],
       },
+      'nova-plataforma': {
+        title: 'Nova Plataforma de Abertura de Contas',
+        context: 'Desenvolvimento de uma nova plataforma de abertura de contas para pessoa física e jurídica em instituição financeira, com foco em escalabilidade, segurança, experiência do usuário e conformidade com normas regulatórias do BACEN e Receita Federal.',
+        contribution: 'Entrega de features completas em arquitetura full-stack, do back-end em Java 17/Spring Framework ao front-end em Angular 19+/TypeScript, integrados a APIs RESTful documentadas via OpenAPI e a microsserviços orientados a eventos com Kafka. Responsável por testes automatizados (unitários e de integração), monitoramento de aplicações em produção na Azure e resolução de incidentes. Participação ativa nas cerimônias ágeis (planning, refinamento e dailies) e em code reviews constantes para garantir qualidade e padronização do código. Atuação também na orientação e onboarding de novos membros da equipe, e colaboração próxima com squads de produto e design.',
+        results: 'Redução no tempo de abertura de contas e aumento na satisfação do cliente, com entrega de uma plataforma escalável e aderente às exigências regulatórias do setor financeiro.',
+        techStack: ['Angular 19+', 'TypeScript', 'Jest', 'Java 17', 'Spring Framework', 'Maven', 'OpenAPI', 'Azure', 'MongoDB', 'Kafka']
+      }
     };
 
     this.project = projectsMap[slug || ''];

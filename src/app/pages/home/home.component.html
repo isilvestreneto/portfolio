@@ -7,6 +7,10 @@
 <section class="projects-section" id="projetos">
     <h3>Projetos</h3>
     <div class="project-grid">
+        <app-project-card title="Nova Plataforma de Abertura de Conta"
+            description="Plataforma full-stack para abertura de contas PF e PJ em instituição financeira, com back-end em Java/Spring Boot e front-end em Angular, integrados via APIs REST e microsserviços orientados a eventos com Kafka. Atuação completa no ciclo de desenvolvimento: cerimônias ágeis, code review, testes automatizados, monitoramento em produção e conformidade com normas regulatórias do BACEN."
+            [techStack]="['Angular 19+', 'TypeScript', 'Jest', 'Java 17', 'Spring Framework', 'Maven', 'OpenAPI', 'Azure', 'MongoDB', 'Kafka']"
+            [routerLink]="'/projetos/nova-plataforma'"></app-project-card>
         <app-project-card title="Abertura de Conta Digital D+0"
             description="Implementação front-end para reduzir o prazo de abertura de conta de D+4 para D0 em uma instituição financeira, utilizando Angular 8, TypeScript e Jest."
             [techStack]="['Angular 8', 'TypeScript', 'Jest', 'Design System interno']"
